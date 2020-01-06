@@ -6,11 +6,16 @@ metadata:
   name: nexus-server
 spec:
   ports:
-    - name: nexus
+    - name: nexus-server
       port: 8081
       protocol: TCP
       targetPort: 8081
       nodePort: 30037
+    - name: docker-repo
+      port: 8082
+      protocol: TCP
+      targetPort: 8082
+      nodePort: 30038
   selector:
     app: nexus-server
   type: NodePort
